@@ -119,13 +119,13 @@ class Utils {
       let paisSelected = this.countries[i];
       let roleSelected = this.roles[this.getRandomIntInclusive(0, this.roles.length - 1)];
       array.push({
-        "email": `${nameSelected}${lastNameSelected}@hotmail.com`.toLowerCase(),
+        "email": `${nameSelected}${lastNameSelected}@mailinator.com`.toLowerCase(),
         "nombre": nameSelected,
         "apellido": lastNameSelected,
         "genero": genderSelected,
         "pais": paisSelected,
         "rol": roleSelected,
-        "empresa": "ISA systems"
+        "empresa": "QOTSA"
       });
     }
     return array;
@@ -140,7 +140,7 @@ class Utils {
       let roleSelected = this.roles[this.getRandomIntInclusive(0, this.roles.length - 1)];
 
       array.push({
-        "email": `${nameSelected}${lastNameSelected}@hotmail.com`.toLowerCase().replace(' ', ''),
+        "email": `${nameSelected}${lastNameSelected}@mailinator.com`.toLowerCase().replace(' ', ''),
         "nombre": nameSelected,
         "apellido": lastNameSelected,
         "genero": genderSelected,
@@ -169,7 +169,7 @@ class Utils {
       let roleSelected = this.roles[this.getRandomIntInclusive(0, this.roles.length - 1)] + this.getRandomIntInclusive(0, 10);
 
       array.push({
-        "email": `${nameSelected}${lastNameSelected}@hotmail.com`.toLowerCase(),
+        "email": `${nameSelected}${lastNameSelected}@mailinator.com`.toLowerCase(),
         "nombre": nameSelected,
         "apellido": lastNameSelected,
         "genero": genderSelected,
@@ -219,6 +219,8 @@ class Utils {
     }
     return array;
   }
+
+
 }
 
 module.exports = Utils;

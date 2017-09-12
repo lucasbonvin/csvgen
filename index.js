@@ -6,6 +6,7 @@ let positive = [];
 let onePerson = [];
 let oneCompany = [];
 let negativeData = [];
+let languageData = [];
 const personsQty = 1000;
 
 try {
@@ -15,6 +16,7 @@ try {
   onePerson = utils.addNPersons(onePerson, 1);
   oneCompany = utils.addNCompanies(oneCompany, 1);
   negativeData = utils.negativeTesting(negativeData, 100);
+  languageData = utils.addNPersons(languageData, 6);
 
 
   let positiveJSON = json2csv({
@@ -39,6 +41,11 @@ try {
 
   let negativeJSON = json2csv({
     data: negativeData,
+    fields: utils.fields
+  });
+
+  let languageJSON = json2csv({
+    data: languageData,
     fields: utils.fields
   });
 
@@ -71,6 +78,12 @@ try {
   fs.writeFile('../testFiles/negativeTest.csv', negativeJSON, function(err) {
     if (err) throw err;
     console.log('negativeTest.csv saved');
+  });
+
+  // One company CSV file write
+  fs.writeFile('../testFiles/languageTest.csv', languageJSON, function(err) {
+    if (err) throw err;
+    console.log('languageTest.csv saved');
   });
 
 } catch(err) {
