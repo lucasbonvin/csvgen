@@ -56,44 +56,50 @@ try {
     fields: utils.fieldsCompany
   });
 
+  // Creates dir if not exists
+  let dir = './testFiles';
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+
   // Random users positive test file write
-  fs.writeFile('../testFiles/positiveTest.csv', positiveJSON, function(err) {
+  fs.writeFile('./testFiles/positiveTest.csv', positiveJSON, function(err) {
     if (err) throw err;
     console.log('positiveTest.csv saved');
   });
 
   // Countries exhaustive test file write
-  fs.writeFile('../testFiles/countriesTest.csv', countriesJSON, function(err) {
+  fs.writeFile('./testFiles/countriesTest.csv', countriesJSON, function(err) {
     if (err) throw err;
     console.log('countriesTest.csv saved');
     console.log(`Total countries: ${countries.length}`);
   });
 
   // One person CSV file write
-  fs.writeFile('../testFiles/onepersonTest.csv', onePersonJSON, function(err) {
+  fs.writeFile('./testFiles/onepersonTest.csv', onePersonJSON, function(err) {
     if (err) throw err;
     console.log('onepersonTest.csv saved');
   });
 
   // One company CSV file write
-  fs.writeFile('../testFiles/onecompanyTest.csv', oneCompanyJSON, function(err) {
+  fs.writeFile('./testFiles/onecompanyTest.csv', oneCompanyJSON, function(err) {
     if (err) throw err;
     console.log('onecompanyTest.csv saved');
   });
 
   // One company CSV file write
-  fs.writeFile('../testFiles/negativeTest.csv', negativeJSON, function(err) {
+  fs.writeFile('./testFiles/negativeTest.csv', negativeJSON, function(err) {
     if (err) throw err;
     console.log('negativeTest.csv saved');
   });
 
   // One company CSV file write
-  fs.writeFile('../testFiles/languageTest.csv', languageJSON, function(err) {
+  fs.writeFile('./testFiles/languageTest.csv', languageJSON, function(err) {
     if (err) throw err;
     console.log('languageTest.csv saved');
   });
 
-  fs.writeFile('../testFiles/ladderCompanyTest.csv', ladderCompanyJSON, function(err) {
+  fs.writeFile('./testFiles/ladderCompanyTest.csv', ladderCompanyJSON, function(err) {
     if (err) throw err;
     console.log('ladderCompanyTest.csv saved');
   })

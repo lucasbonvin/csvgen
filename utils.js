@@ -152,35 +152,6 @@ class Utils {
     return array;
   }
 
-  cuitGenerator() {
-    let fstPart = this.getRandomIntInclusive(10, 30);
-    let sndPart = this.getRandomIntInclusive(1000000, 4000000);
-    let trdPart = this.getRandomIntInclusive(1, 9);
-
-    return `${fstPart}-${sndPart}-${trdPart}`;
-  }
-
-  negativeTesting(array, n) {
-    for (let i = 0; i < n; i++) {
-      let nameSelected = this.firstNames[this.getRandomIntInclusive(0, this.firstNames.length - 1)] + this.getRandomIntInclusive(0, 10);
-      let lastNameSelected = this.lastNames[this.getRandomIntInclusive(0, this.lastNames.length - 1)]+ this.getRandomIntInclusive(0, 10);
-      let genderSelected = this.gender[this.getRandomIntInclusive(0, this.gender.length - 1)]+ this.getRandomIntInclusive(0, 10);
-      let paisSelected = this.countries[this.getRandomIntInclusive(0, this.countries.length - 1)];
-      let roleSelected = this.roles[this.getRandomIntInclusive(0, this.roles.length - 1)] + this.getRandomIntInclusive(0, 10);
-
-      array.push({
-        "email": `${nameSelected}${lastNameSelected}@mailinator.com`.toLowerCase(),
-        "nombre": nameSelected,
-        "apellido": lastNameSelected,
-        "genero": genderSelected,
-        "pais": paisSelected,
-        "rol": roleSelected,
-        "empresa": ""
-      });
-    }
-    return array;
-  }
-
   addNCompanies(array, n) {
     for (let i = 0; i < n; i++) {
       let nameSelected = this.firstNames[this.getRandomIntInclusive(0, this.firstNames.length - 1)];
@@ -220,6 +191,34 @@ class Utils {
     return array;
   }
 
+  cuitGenerator() {
+    let fstPart = this.getRandomIntInclusive(10, 30);
+    let sndPart = this.getRandomIntInclusive(1000000, 4000000);
+    let trdPart = this.getRandomIntInclusive(1, 9);
+
+    return `${fstPart}-${sndPart}-${trdPart}`;
+  }
+
+  negativeTesting(array, n) {
+    for (let i = 0; i < n; i++) {
+      let nameSelected = this.firstNames[this.getRandomIntInclusive(0, this.firstNames.length - 1)] + this.getRandomIntInclusive(0, 10);
+      let lastNameSelected = this.lastNames[this.getRandomIntInclusive(0, this.lastNames.length - 1)]+ this.getRandomIntInclusive(0, 10);
+      let genderSelected = this.gender[this.getRandomIntInclusive(0, this.gender.length - 1)]+ this.getRandomIntInclusive(0, 10);
+      let paisSelected = this.countries[this.getRandomIntInclusive(0, this.countries.length - 1)];
+      let roleSelected = this.roles[this.getRandomIntInclusive(0, this.roles.length - 1)] + this.getRandomIntInclusive(0, 10);
+
+      array.push({
+        "email": `${nameSelected}${lastNameSelected}@mailinator.com`.toLowerCase(),
+        "nombre": nameSelected,
+        "apellido": lastNameSelected,
+        "genero": genderSelected,
+        "pais": paisSelected,
+        "rol": roleSelected,
+        "empresa": ""
+      });
+    }
+    return array;
+  }
 }
 
 module.exports = Utils;
