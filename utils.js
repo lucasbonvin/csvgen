@@ -125,7 +125,7 @@ class Utils {
         "genero": genderSelected,
         "pais": paisSelected,
         "rol": roleSelected,
-        "empresa": "QOTSA"
+        "empresa": "Hanni"
       });
     }
     return array;
@@ -219,7 +219,6 @@ class Utils {
     }
     return array;
   }
-
 
 }
 

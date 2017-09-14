@@ -7,6 +7,7 @@ let onePerson = [];
 let oneCompany = [];
 let negativeData = [];
 let languageData = [];
+let ladderCompanyData = [];
 const personsQty = 1000;
 
 try {
@@ -17,6 +18,7 @@ try {
   oneCompany = utils.addNCompanies(oneCompany, 1);
   negativeData = utils.negativeTesting(negativeData, 100);
   languageData = utils.addNPersons(languageData, 6);
+  ladderCompanyData = utils.addNCompanies(ladderCompanyData, 29);
 
 
   let positiveJSON = json2csv({
@@ -47,6 +49,11 @@ try {
   let languageJSON = json2csv({
     data: languageData,
     fields: utils.fields
+  });
+
+  let ladderCompanyJSON = json2csv({
+    data: ladderCompanyData,
+    fields: utils.fieldsCompany
   });
 
   // Random users positive test file write
@@ -85,6 +92,11 @@ try {
     if (err) throw err;
     console.log('languageTest.csv saved');
   });
+
+  fs.writeFile('../testFiles/ladderCompanyTest.csv', ladderCompanyJSON, function(err) {
+    if (err) throw err;
+    console.log('ladderCompanyTest.csv saved');
+  })
 
 } catch(err) {
   console.log('Error!');
